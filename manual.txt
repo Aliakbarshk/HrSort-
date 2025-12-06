@@ -1,0 +1,95 @@
+HORIZON SORT - USER & DEVELOPER MANUAL
+======================================
+
+APPLICATION OVERVIEW
+--------------------
+Horizon Sort is a professional-grade web application designed for data management, list organization, and AI-powered categorization. It features a modern "Cyber-Professional" aesthetic using a Teal & Slate color palette.
+
+AUTHOR
+------
+Built by Shaikh AliAkbar (Stronix)
+
+FEATURES & FUNCTIONALITY
+------------------------
+
+1. DATA ANALYZER
+   - Function: Takes a list of raw text data and performs statistical analysis.
+   - Capabilities:
+     - Calculates Total Rows, Unique Items, and Duplicate counts.
+     - Identifies specific duplicate entries.
+     - Generates a Bar Chart visualizing Unique vs. Duplicate data.
+     - Allows downloading the "Cleaned" (Unique) list as a .txt file.
+   - Files Involved:
+     - `components/Analyzer.tsx`: Main logic and UI for this tool.
+     - `types.ts`: Defines data structures like `AnalysisResult` and `TitleStats`.
+
+2. LIST COMPARATOR
+   - Function: Compares two separate lists (List A and List B) to find relationships.
+   - Capabilities:
+     - Identifies Intersection (items appearing in both lists).
+     - Identifies items unique to List A.
+     - Identifies items unique to List B.
+     - visualizes the overlap using a Pie Chart.
+     - Calculates a "Similarity Index" percentage.
+   - Files Involved:
+     - `components/Comparator.tsx`: Logic for set operations (intersection/difference) and UI.
+     - `types.ts`: Defines `ComparisonResult`.
+
+3. BATCH PROCESSOR
+   - Function: Splits large lists into smaller, manageable sub-groups (sets).
+   - Capabilities:
+     - Split Modes: 
+       - "Set Capacity": Control exact items per set (1 to 500) via slider.
+       - "Fixed Sets": Split list into a specific number of groups.
+     - Set Naming: Toggle between Numeric ("Set 1, Set 2") or Alphabetical ("Set A, Set B").
+     - Auto-Indexing: Adds numbers (1., 2., 3...) continuous across sets.
+     - Custom Prefix: Adds text labels (e.g., "Video - ") to every item.
+     - Preset Quick Buttons: Fast toggle for 10, 20, 50, 100 items per set.
+   - Files Involved:
+     - `components/Batcher.tsx`: Logic for array slicing, naming generation, and UI state.
+     - `types.ts`: Defines `ViewMode.BATCHER`.
+
+4. AI CLUSTERING (Topic Sorter)
+   - Function: Uses Google Gemini AI to intelligently categorize a list of random titles into logical topics.
+   - Capabilities:
+     - Sends titles to Gemini API.
+     - Returns structured JSON data with Category Names and associated Items.
+     - Requires a valid Google Gemini API Key.
+   - Files Involved:
+     - `components/TopicSorter.tsx`: UI for input and displaying sorted cards.
+     - `services/geminiService.ts`: Handles the API connection to Google GenAI.
+
+5. API KEY MANAGEMENT
+   - Function: Allows users to securely input their own Gemini API Key.
+   - Capabilities:
+     - Stores the key in the browser's `localStorage` (persists on refresh).
+     - Provides a Settings Modal to Add, View (masked), and Remove the key.
+     - The key is injected dynamically into the AI Service when needed.
+   - Files Involved:
+     - `App.tsx`: Manages the global state of the API Key and the Modal UI.
+     - `services/geminiService.ts`: Consumes the key for API calls.
+
+6. UI & NAVIGATION
+   - Function: Provides the layout and navigation structure.
+   - Capabilities:
+     - Responsive Sidebar (collapsible on mobile).
+     - Tab-based navigation to switch between tools.
+     - Global styling (Teal/Slate theme).
+   - Files Involved:
+     - `App.tsx`: Main layout container and router logic.
+     - `index.html`: Base HTML, fonts (Outfit/Inter), and Tailwind scripts.
+
+FILE STRUCTURE MAP
+------------------
+root/
+├── index.html                # Entry HTML file
+├── index.tsx                 # React entry point
+├── App.tsx                   # Main Layout & Global State
+├── types.ts                  # TypeScript Interfaces/Types
+├── services/
+│   └── geminiService.ts      # AI Integration Logic
+└── components/
+    ├── Analyzer.tsx          # Analyzer Tool
+    ├── Comparator.tsx        # Comparator Tool
+    ├── Batcher.tsx           # Batcher Tool
+    └── TopicSorter.tsx       # AI Tool
