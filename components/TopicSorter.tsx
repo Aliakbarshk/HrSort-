@@ -86,7 +86,7 @@ const TopicSorter: React.FC<TopicSorterProps> = ({ apiKey, onOpenSettings }) => 
           <div>
             <h2 className="text-lg font-bold text-slate-900 font-display">AI Topic Cluster</h2>
             <p className="text-sm text-slate-600 mt-1">
-              Automatically sort your bulk titles into logical categories using Gemini AI. 
+              Automatically sort your bulk titles into logical categories  
             </p>
           </div>
         </div>

@@ -207,7 +207,7 @@ const App: React.FC = () => {
               {currentView === ViewMode.ANALYZER && 'Deep index & frequency analysis tool.'}
               {currentView === ViewMode.COMPARATOR && 'Advanced set intersection & difference engine.'}
               {currentView === ViewMode.BATCHER && 'Automated list segmentation & formatting.'}
-              {currentView === ViewMode.TOPICS && 'Smart categorization powered by Gemini.'}
+              {currentView === ViewMode.TOPICS && 'Smart categorization'}
             </p>
           </div>
           
