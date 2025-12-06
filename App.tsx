@@ -300,7 +300,7 @@ const App: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-xs text-teal-600 hover:text-teal-800 hover:underline"
                   >
-                    Get a free API key from Google AI Studio →
+                    
                   </a>
                 </div>
              </div>
