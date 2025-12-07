@@ -532,12 +532,10 @@ const App: React.FC = () => {
               {/* Link to Google AI Studio */}
               <div className="text-center pt-2">
                 <a
-                  href="https://aistudio.google.com/app/apikey"
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-teal-600 hover:text-teal-800 hover:underline"
                 >
-                  Get a free API key from Google AI Studio →
+                  Need key --
                 </a>
               </div>
             </div>
