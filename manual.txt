@@ -51,11 +51,16 @@ FEATURES & FUNCTIONALITY
 
 4. AI CLUSTERING (Topic Sorter)
    - Function: Uses Google Gemini AI to intelligently categorize a list of random titles into logical topics.
+   - SECURITY RESTRICTION:
+     - This module is password protected.
+     - DEFAULT PASSWORD: "hc1"
+     - Access is granted for the session after successful password entry.
    - Capabilities:
      - Sends titles to Gemini API.
      - Returns structured JSON data with Category Names and associated Items.
      - Requires a valid Google Gemini API Key.
    - Files Involved:
+     - `App.tsx`: Handles the Admin Password verification modal and route interception.
      - `components/TopicSorter.tsx`: UI for input and displaying sorted cards.
      - `services/geminiService.ts`: Handles the API connection to Google GenAI.
 
@@ -75,6 +80,7 @@ FEATURES & FUNCTIONALITY
      - Responsive Sidebar (collapsible on mobile).
      - Tab-based navigation to switch between tools.
      - Global styling (Teal/Slate theme).
+     - **External Resources**: Quick links to "Horizon Corp" and the Developer's Portfolio in the sidebar footer.
    - Files Involved:
      - `App.tsx`: Main layout container and router logic.
      - `index.html`: Base HTML, fonts (Outfit/Inter), and Tailwind scripts.
