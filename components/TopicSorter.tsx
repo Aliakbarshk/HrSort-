@@ -102,7 +102,7 @@ const TopicSorter: React.FC<TopicSorterProps> = ({ apiKey, onOpenSettings }) => 
           <div>
             <h3 className="text-lg font-bold text-slate-800 font-display">API Key Required</h3>
             <p className="text-slate-500 max-w-md mt-2 text-sm">
-              To use the AI features, you need to provide your own Google Gemini API key. Your key is stored locally on your device.
+              To use the AI features, you need to provide your own API key. Your key is stored locally on your device.
             </p>
           </div>
           {/* Button to open settings */}
