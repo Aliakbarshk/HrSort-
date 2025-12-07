@@ -483,9 +483,7 @@ const App: React.FC = () => {
             {/* Modal Body */}
             <div className="p-6 space-y-4">
               <p className="text-sm text-slate-600">
-                Enter your Google Gemini API key below. The key is stored
-                securely in your browser's local storage and is never sent to
-                our servers.
+               Enter your api key
               </p>
 
               {/* Input Field with Show/Hide Toggle */}
